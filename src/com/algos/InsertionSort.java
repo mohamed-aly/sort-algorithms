@@ -5,16 +5,23 @@ public class InsertionSort {
 
         //{5, -1, 22, 14, 10, 9, -21};
 
-        for(int firstUnsortedIndex = 1; firstUnsortedIndex < array.length; firstUnsortedIndex++){
-            int newElement = array[firstUnsortedIndex];
+        insertionSort(1, array);
+    }
 
-            int i;
-
-            for(i = firstUnsortedIndex; i>0&&array[i-1]>newElement; i--){
-                array[i] = array[i-1];
-            }
-
-            array[i] = newElement;
+    private static void insertionSort(int firstUnsortedIndex, int[] array){
+        if(firstUnsortedIndex>array.length-1){
+            return;
         }
+
+        int newElement = array[firstUnsortedIndex];
+
+        int i;
+
+        for(i = firstUnsortedIndex; i>0&&array[i-1]>newElement; i--){
+            array[i] = array[i-1];
+        }
+
+        array[i] = newElement;
+        insertionSort(++firstUnsortedIndex, array);
     }
 }
