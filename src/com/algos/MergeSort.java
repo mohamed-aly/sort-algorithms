@@ -19,7 +19,7 @@ public class MergeSort {
     }
 
     private static void merge(int[] array, int start, int mid, int end) {
-        if (array[mid - 1] < array[mid]) return;
+        if (array[mid - 1] > array[mid]) return;
 
         int i = start;
         int j = mid;
@@ -28,7 +28,7 @@ public class MergeSort {
         int[] tempArray = new int[end - start];
 
         while (i < mid && j < end) {
-            tempArray[tempIndex++] = array[i] <= array[j] ? array[i++] : array[j++];
+            tempArray[tempIndex++] = array[i] > array[j] ? array[i++] : array[j++];
         }
 
         System.arraycopy(array, i, array, start + tempIndex, mid - i);

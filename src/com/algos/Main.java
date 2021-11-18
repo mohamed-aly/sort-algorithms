@@ -2,8 +2,8 @@ package com.algos;
 
 public class Main {
     public static void main(String[] args) {
-        int[] array = {-1, 5, 6, 6 ,8 ,9, 7, 10, 2, 4, 7,100};
-        CountingSort.sort(array);
+        int[] array = {-1, 5, 6 ,8 ,9, 7, 10, -5};
+        MergeSort.sort(array);
         Util.show(array);
     }
 }
